@@ -18,9 +18,17 @@ public class Show {
 
     public void printListOfActors() {
         System.out.println("Задействованные актёры: ");
-        for (Actor actor : listOfActors) {
-            System.out.println(actor);
+        if (listOfActors.isEmpty()) {
+            System.out.println("Список актёров пуст!");
+        } else {
+            for (Actor actor : listOfActors) {
+                System.out.println(actor);
+            }
         }
+    }
+
+    public void printDirector() {
+        System.out.println("Режиссёр спектакля: " + director);
     }
 
     @Override
@@ -37,11 +45,26 @@ public class Show {
     }
 
     public void addActor(Actor actor) {
-        listOfActors.add(actor);
+        if (listOfActors.contains(actor)) {
+            System.out.println("Актёр " + actor + " ранее уже был добавлен в спектакль");
+        } else {
+            listOfActors.add(actor);
+            System.out.println("Актёр " + actor + " успешно добавлен в спектакль");
+        }
     }
 
-    public void replacementActor(Actor actorOld, Actor actorNew) {
-        listOfActors.removeIf(actor1 -> actor1.equals(actorOld));
-        listOfActors.add(actorNew);
+    public void replaceActor(Actor actorOld, Actor actorNew) {
+        boolean foundActor = false;
+        for (int i = 0; i < listOfActors.size(); i++) {
+            if (listOfActors.get(i).surname.equals(actorOld.surname)) {
+                listOfActors.set(i, actorNew);
+                foundActor = true;
+                System.out.println("Актёр " + actorOld + " заменён на " + actorNew);
+                break;
+            }
+        }
+        if (!foundActor) {
+            System.out.println("Актёр " + actorOld + " не найден!");
+        }
     }
 }
