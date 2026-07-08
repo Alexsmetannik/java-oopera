@@ -28,7 +28,7 @@ public class Show {
     }
 
     public void printDirector() {
-        System.out.println("Режиссёр спектакля " + title + ": " + director);
+        System.out.println("Режиссёр спектакля " + title + ": " + director.name + " " + director.surname);
     }
 
     @Override
@@ -53,18 +53,18 @@ public class Show {
         }
     }
 
-    public void replaceActor(Actor actorOld, Actor actorNew) {
+    public void replaceActor(Actor actorNew, String surname) {
         boolean foundActor = false;
         for (int i = 0; i < listOfActors.size(); i++) {
-            if (listOfActors.get(i).surname.equals(actorOld.surname)) {
+            if (listOfActors.get(i).surname.equals(surname)) {
                 listOfActors.set(i, actorNew);
                 foundActor = true;
-                System.out.println("Актёр " + actorOld + " заменён на " + actorNew + " в спектакле " + title);
+                System.out.println("Актёр " + surname + " заменён на " + actorNew + " в спектакле " + title);
                 break;
             }
         }
         if (!foundActor) {
-            System.out.println("Актёр " + actorOld + " в спектакле " + title + " не найден!");
+            System.out.println("Актёр " + surname + " в спектакле " + title + " не найден!");
         }
     }
 }

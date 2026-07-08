@@ -25,27 +25,48 @@ public class Theatre {
         Ballet ballet = new Ballet("Лебединое озеро", 150, director2, new ArrayList<>(),
                 musicAuthor, "Либретто балета 'Лебединое озеро'", choreographer);
 
+
+        System.out.println("Распределение актёров по спектаклю " + regularShow.title + ": ");
         regularShow.addActor(actor1);
         regularShow.addActor(actor2);
         regularShow.addActor(actor3);
+        System.out.println();
 
+        System.out.println("Распределение актёров по спектаклю " + opera.title + ": ");
         opera.addActor(actor1);
         opera.addActor(actor2);
+        System.out.println();
 
+        System.out.println("Распределение актёров по спектаклю " + ballet.title + ": ");
         ballet.addActor(actor2);
         ballet.addActor(actor3);
+        System.out.println();
 
+        System.out.println("Список актёров и режиссёров спектактей: ");
         regularShow.printListOfActors();
+        regularShow.printDirector();
+        System.out.println();
+
         opera.printListOfActors();
+        opera.printDirector();
+        System.out.println();
+
         ballet.printListOfActors();
+        ballet.printDirector();
+        System.out.println();
 
-        opera.replaceActor(actor1, actor3);
+        System.out.println("Замена актёров в спектакле " + opera.title + ": ");
+        opera.replaceActor(actor3, "Безруков");
         opera.printListOfActors();
+        System.out.println();
 
-        Actor actor4 = new Actor("Сергей", "Сергеев", Gender.MALE, 170);
-        ballet.replaceActor(actor2, actor4);
+        System.out.println("Замена актёров в спектакле " + ballet.title + ": ");
+        ballet.replaceActor(actor2, "Сергеев");
+        System.out.println();
 
         opera.printLibretto();
+        System.out.println();
         ballet.printLibretto();
+        System.out.println();
     }
 }
