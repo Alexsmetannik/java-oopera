@@ -17,7 +17,7 @@ public class Show {
     }
 
     public void printListOfActors() {
-        System.out.println("Задействованные актёры: ");
+        System.out.println("В спектакле " + title + " задействованны актёры: ");
         if (listOfActors.isEmpty()) {
             System.out.println("Список актёров пуст!");
         } else {
@@ -28,7 +28,7 @@ public class Show {
     }
 
     public void printDirector() {
-        System.out.println("Режиссёр спектакля: " + director);
+        System.out.println("Режиссёр спектакля " + title + ": " + director);
     }
 
     @Override
@@ -46,10 +46,10 @@ public class Show {
 
     public void addActor(Actor actor) {
         if (listOfActors.contains(actor)) {
-            System.out.println("Актёр " + actor + " ранее уже был добавлен в спектакль");
+            System.out.println("Актёр " + actor + " ранее уже был добавлен в спектакль " + title);
         } else {
             listOfActors.add(actor);
-            System.out.println("Актёр " + actor + " успешно добавлен в спектакль");
+            System.out.println("Актёр " + actor + " успешно добавлен в спектакль " + title);
         }
     }
 
@@ -59,12 +59,12 @@ public class Show {
             if (listOfActors.get(i).surname.equals(actorOld.surname)) {
                 listOfActors.set(i, actorNew);
                 foundActor = true;
-                System.out.println("Актёр " + actorOld + " заменён на " + actorNew);
+                System.out.println("Актёр " + actorOld + " заменён на " + actorNew + " в спектакле " + title);
                 break;
             }
         }
         if (!foundActor) {
-            System.out.println("Актёр " + actorOld + " не найден!");
+            System.out.println("Актёр " + actorOld + " в спектакле " + title + " не найден!");
         }
     }
 }
