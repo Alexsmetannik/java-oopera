@@ -1,0 +1,13 @@
+package instances;
+
+import java.util.List;
+
+public class Ballet extends MusicalShow {
+    public Person choreographer;
+
+    public Ballet(String title, Integer duration, Director director, List<Actor> listOfActors, Person musicAuthor,
+                  String librettoText, Person choreographer) {
+        super(title, duration, director, listOfActors, musicAuthor, librettoText);
+        this.choreographer = choreographer;
+    }
+}
