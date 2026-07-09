@@ -22,11 +22,12 @@ public class Actor extends Person {
         Actor actor = (Actor) o;
         return Objects.equals(name, actor.name) &&
                 Objects.equals(surname, actor.surname) &&
+                Objects.equals(gender, actor.gender) &&
                 Objects.equals(height, actor.height);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, surname, height);
+        return Objects.hash(name, surname, gender, height);
     }
 }
