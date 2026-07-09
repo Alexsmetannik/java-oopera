@@ -10,7 +10,7 @@ public class Director extends Person {
 
     @Override
     public String toString() {
-        return "Имя = " + name + ", Фамилия = " + surname
+        return "Имя = " + getName() + ", Фамилия = " + getSurname()
                 + " (количество поставленных спектаклей = " + numberOfShows + ")";
     }
 }

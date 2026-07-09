@@ -28,7 +28,7 @@ public class Show {
     }
 
     public void printDirector() {
-        System.out.println("Режиссёр спектакля " + title + ": " + director.name + " " + director.surname);
+        System.out.println("Режиссёр спектакля " + title + ": " + director.getName() + " " + director.getSurname());
     }
 
     @Override
@@ -56,7 +56,7 @@ public class Show {
     public void replaceActor(Actor actorNew, String surname) {
         boolean foundActor = false;
         for (int i = 0; i < listOfActors.size(); i++) {
-            if (listOfActors.get(i).surname.equals(surname)) {
+            if (listOfActors.get(i).getSurname().equals(surname)) {
                 listOfActors.set(i, actorNew);
                 foundActor = true;
                 System.out.println("Актёр " + surname + " заменён на " + actorNew + " в спектакле " + title);
