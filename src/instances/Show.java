@@ -39,11 +39,6 @@ public class Show {
                 && Objects.equals(director, show.director) && Objects.equals(listOfActors, show.listOfActors);
     }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(title, duration, director, listOfActors);
-    }
-
     public void addActor(Actor actor) {
         if (listOfActors.contains(actor)) {
             System.out.println("Актёр " + actor + " ранее уже был добавлен в спектакль " + title);
@@ -57,9 +52,13 @@ public class Show {
         boolean foundActor = false;
         for (int i = 0; i < listOfActors.size(); i++) {
             if (listOfActors.get(i).getSurname().equals(surname)) {
-                listOfActors.set(i, actorNew);
-                foundActor = true;
-                System.out.println("Актёр " + surname + " заменён на " + actorNew + " в спектакле " + title);
+                if (listOfActors.contains(actorNew)) {
+                    System.out.println("Актёр " + actorNew + " уже задействован в спектакле " + title);
+                } else {
+                    listOfActors.set(i, actorNew);
+                    foundActor = true;
+                    System.out.println("Актёр " + surname + " заменён на " + actorNew + " в спектакле " + title);
+                }
                 break;
             }
         }
