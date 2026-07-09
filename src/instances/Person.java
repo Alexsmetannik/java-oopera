@@ -1,9 +1,9 @@
 package instances;
 
 public class Person {
-    private String name;
-    private String surname;
-    private Gender gender;
+    private final String name;
+    private final String surname;
+    private final Gender gender;
 
     public Person(String name, String surname, Gender gender) {
         this.name = name;
