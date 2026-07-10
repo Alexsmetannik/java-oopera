@@ -25,7 +25,7 @@ public class Show {
     }
 
     public void printListOfActors() {
-        System.out.println("В спектакле " + title + " задействованны актёры: ");
+        System.out.println("В спектакле " + getTitle() + " задействованны актёры: ");
         if (listOfActors.isEmpty()) {
             System.out.println("Список актёров пуст!");
         } else {
@@ -36,7 +36,7 @@ public class Show {
     }
 
     public void printDirector() {
-        System.out.println("Режиссёр спектакля " + title + ": " + director.getName() + " " + director.getSurname());
+        System.out.println("Режиссёр спектакля " + getTitle() + ": " + director.getName() + " " + director.getSurname());
     }
 
     @Override
@@ -49,10 +49,10 @@ public class Show {
 
     public void addActor(Actor actor) {
         if (listOfActors.contains(actor)) {
-            System.out.println("Актёр " + actor + " ранее уже был добавлен в спектакль " + title);
+            System.out.println("Актёр " + actor + " ранее уже был добавлен в спектакль " + getTitle());
         } else {
             listOfActors.add(actor);
-            System.out.println("Актёр " + actor + " успешно добавлен в спектакль " + title);
+            System.out.println("Актёр " + actor + " успешно добавлен в спектакль " + getTitle());
         }
     }
 
@@ -61,17 +61,17 @@ public class Show {
         for (int i = 0; i < listOfActors.size(); i++) {
             if (listOfActors.get(i).getSurname().equals(surname)) {
                 if (listOfActors.contains(actorNew)) {
-                    System.out.println("Актёр " + actorNew + " уже задействован в спектакле " + title);
+                    System.out.println("Актёр " + actorNew + " уже задействован в спектакле " + getTitle());
                 } else {
                     listOfActors.set(i, actorNew);
                     foundActor = true;
-                    System.out.println("Актёр " + surname + " заменён на " + actorNew + " в спектакле " + title);
+                    System.out.println("Актёр " + surname + " заменён на " + actorNew + " в спектакле " + getTitle());
                 }
                 break;
             }
         }
         if (!foundActor) {
-            System.out.println("Актёр " + surname + " в спектакле " + title + " не найден!");
+            System.out.println("Актёр " + surname + " в спектакле " + getTitle() + " не найден!");
         }
     }
 }

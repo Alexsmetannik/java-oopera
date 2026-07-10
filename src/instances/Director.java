@@ -3,6 +3,10 @@ package instances;
 public class Director extends Person {
     public int numberOfShows;
 
+    public int getNumberOfShows() {
+        return numberOfShows;
+    }
+
     public Director(String name, String surname, Gender gender, int numberOfShows) {
         super(name, surname, gender);
         this.numberOfShows = numberOfShows;
@@ -11,6 +15,6 @@ public class Director extends Person {
     @Override
     public String toString() {
         return "Имя = " + getName() + ", Фамилия = " + getSurname()
-                + " (количество поставленных спектаклей = " + numberOfShows + ")";
+                + " (количество поставленных спектаклей = " + getNumberOfShows() + ")";
     }
 }

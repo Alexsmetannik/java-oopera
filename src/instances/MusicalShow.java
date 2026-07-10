@@ -13,7 +13,11 @@ public class MusicalShow extends Show {
         this.librettoText = librettoText;
     }
 
+    public String getLibrettoText() {
+        return librettoText;
+    }
+
     public void printLibretto() {
-        System.out.print("Текст либретто спектакля " + title + ": " + librettoText);
+        System.out.print("Текст либретто спектакля " + getTitle() + ": " + getLibrettoText());
     }
 }

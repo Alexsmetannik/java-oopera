@@ -5,6 +5,10 @@ import java.util.Objects;
 public class Actor extends Person {
     public int height;
 
+    public int getHeight() {
+        return height;
+    }
+
     public Actor(String name, String surname, Gender gender, int height) {
         super(name, surname, gender);
         this.height = height;
@@ -12,7 +16,7 @@ public class Actor extends Person {
 
     @Override
     public String toString() {
-        return "Имя = " + getName() + ", Фамилия = " + getSurname() + " (рост = " + height + ")";
+        return "Имя = " + getName() + ", Фамилия = " + getSurname() + " (рост = " + getHeight() + ")";
     }
 
     @Override
@@ -23,11 +27,11 @@ public class Actor extends Person {
         return Objects.equals(getName(), actor.getName()) &&
                 Objects.equals(getSurname(), actor.getSurname()) &&
                 Objects.equals(getGender(), actor.getGender()) &&
-                Objects.equals(height, actor.height);
+                Objects.equals(getHeight(), actor.getHeight());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(getName(), getSurname(), getGender(), height);
+        return Objects.hash(getName(), getSurname(), getGender(), getHeight());
     }
 }
