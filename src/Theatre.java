@@ -26,18 +26,18 @@ public class Theatre {
                 musicAuthor, "Либретто балета 'Лебединое озеро'", choreographer);
 
 
-        System.out.println("Распределение актёров по спектаклю " + regularShow.title + ": ");
+        System.out.println("Распределение актёров по спектаклю " + regularShow.getTitle() + ": ");
         regularShow.addActor(actor1);
         regularShow.addActor(actor2);
         regularShow.addActor(actor3);
         System.out.println();
 
-        System.out.println("Распределение актёров по спектаклю " + opera.title + ": ");
+        System.out.println("Распределение актёров по спектаклю " + opera.getTitle() + ": ");
         opera.addActor(actor1);
         opera.addActor(actor2);
         System.out.println();
 
-        System.out.println("Распределение актёров по спектаклю " + ballet.title + ": ");
+        System.out.println("Распределение актёров по спектаклю " + ballet.getTitle() + ": ");
         ballet.addActor(actor2);
         ballet.addActor(actor3);
         System.out.println();
@@ -55,12 +55,12 @@ public class Theatre {
         ballet.printDirector();
         System.out.println();
 
-        System.out.println("Замена актёров в спектакле " + opera.title + ": ");
+        System.out.println("Замена актёров в спектакле " + opera.getTitle() + ": ");
         opera.replaceActor(actor3, "Безруков");
         opera.printListOfActors();
         System.out.println();
 
-        System.out.println("Замена актёров в спектакле " + ballet.title + ": ");
+        System.out.println("Замена актёров в спектакле " + ballet.getTitle() + ": ");
         ballet.replaceActor(actor2, "Сергеев");
         System.out.println();
 

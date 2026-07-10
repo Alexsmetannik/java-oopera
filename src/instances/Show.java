@@ -5,11 +5,19 @@ import java.util.Objects;
 
 public class Show {
     public String title;
-    public Integer duration;
+    public int duration;
     public Director director;
     public List<Actor> listOfActors;
 
-    public Show(String title, Integer duration, Director director, List<Actor> listOfActors) {
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public Show(String title, int duration, Director director, List<Actor> listOfActors) {
         this.title = title;
         this.duration = duration;
         this.director = director;

@@ -1,9 +1,9 @@
 package instances;
 
 public class Director extends Person {
-    public Integer numberOfShows;
+    public int numberOfShows;
 
-    public Director(String name, String surname, Gender gender, Integer numberOfShows) {
+    public Director(String name, String surname, Gender gender, int numberOfShows) {
         super(name, surname, gender);
         this.numberOfShows = numberOfShows;
     }
